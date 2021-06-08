@@ -1,0 +1,30 @@
+server:
+  port: 9696
+  servlet:
+    context-path: /yingx
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yingx
+    username: root
+    password: root
+    servlet:
+      multipart:
+        max-file-size: 50MB  #设置文件上传大小
+        max-request-size: 100MB  #设置一次请求携带文件的最大值
+
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/baizhi/mapper/*.xml
+logging:
+  level:
+    com:
+      baizhi:
+        dao: debug
